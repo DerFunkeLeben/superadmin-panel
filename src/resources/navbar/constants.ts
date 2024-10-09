@@ -1,0 +1,81 @@
+export enum Voc {
+  USERS_AND_TERRITORIES = 'Пользователи и территории',
+  USERS = 'Пользователи',
+  LICENSES = 'Лицензии',
+  TERRITORIES = 'Территории',
+  BRICKS = 'БРИКи',
+  DIVISIONS = 'Команды',
+
+  CONTACTS_BASE = 'База контактов',
+  DOCTORS = 'Врачи',
+  LPU = 'ЛПУ',
+  PHARMACY = 'Аптеки',
+  PHARMACY_NETWORK = 'Аптечные сети',
+  LEGAL_ENTITIES = 'Юридические лица',
+
+  LIBRARY = 'Библиотека',
+  CLM = 'CLM презентации',
+  SEQUANCES = 'Секвенции',
+  FOLDERS = 'Папки',
+
+  VISIT_ACTIVITY = 'Визитная активность',
+  VISIT_LIST = 'Список визитов',
+  FOLLOWUP_VISIT_LIST = 'Список следовых визитов',
+  JOINT_VISIT_LIST = 'Список совместных визитов',
+
+  STORAGE_AND_PROMO = 'Образцы и промоматериалы',
+  STORAGE_LIST = 'Список образцов',
+  STORAGE_DISTRIBUTION = 'Распределение образцов',
+  TRANSACTION_HISTORY = 'История транзакций',
+  SAMPLE_TYPES = 'Типы образцов',
+
+  STATISTIC = 'Статистика',
+  DASHBOARDS = 'Дашборды',
+  EXPORT = 'Выгрузка',
+
+  SURVEYS = 'Опросники',
+  TEMPLATE_LIST = 'Список шаблонов',
+
+  IMPORT = 'Импорт',
+  IMPORT_BRICKS = 'Импорт БРИКов',
+  IMPORT_STORAGE = 'Импорт образцов',
+  IMPORT_PROMOPLANS = 'Импорт промопланов',
+  IMPORT_LPU = 'Импорт ЛПУ',
+  IMPORT_DOCTORS = 'Импорт врачей',
+  IMPORT_PHARMACIES = 'Импорт аптек',
+  IMPORT_LICENSES = 'Импорт лицензий',
+  IMPORT_TERRITORIES = 'Импорт территорий',
+  IMPORT_TARGET_LISTS = 'Импорт таргет листов',
+
+  EMAILS = 'Emails',
+  EMAIL_LIST = 'Список emails',
+
+  OMC = 'ОМЦ',
+  OMC_LIST = 'Список ОМЦ',
+
+  SFE = 'SFE',
+  CALENDARS = 'Календари',
+  PROMOGRIDS = 'Промогриды',
+
+  NON_VISIT_ACTIVITY = 'Вневизитная активность',
+  NON_VISIT_ACTIVITY_LIST = 'Список вневизитных активностей',
+  NON_VISIT_ACTIVITY_TYPES = 'Типы вневизитных активностей',
+  NON_VISIT_ACTIVITY_SUBTYPES = 'Подтипы вневизитных активностей',
+
+  EVENTS = 'Мероприятия',
+  EVENT_LIST = 'Список мероприятий',
+  EVENT_TYPES = 'Типы мероприятий',
+  EVENT_SUBTYPES = 'Подтипы мероприятий',
+  EVENT_THEMES = 'Темы мероприятий',
+  EVENT_CYCLE_BUDGETS = 'Цикловые бюджеты мероприятий',
+  EVENT_GIVEN_BUDGETS = 'Выданные бюджеты мероприятий',
+
+  HANDBOOKS = 'Справочники',
+  CITIES = 'Города',
+  REGIONS = 'Регионы',
+  DISTRICTS = 'Дистрикты',
+  SPECIALTIES = 'Специальности',
+  PRODUCTS = 'Продукты',
+  BRANDS = 'Бренды',
+  FRANCHISES = 'Франшизы',
+}

@@ -1,0 +1,4 @@
+include:
+  - project: 'oncall/oncall-devops/ci-cd'
+    ref: $CI_INCLUDE_REF
+    file: $CI_INCLUDE_FILE

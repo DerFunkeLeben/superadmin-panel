@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  font-family: 'Inter', 'Roboto', sans-serif;
+}
+
+* {
+  font-family: 'Inter', 'Roboto', sans-serif !important;
+}
+
+input:-webkit-autofill::first-line { font-size: 16px; }
+
+:root {
+  --app-brand-50: #e0f2f1;
+  --app-text-black: #282828;
+  --app-brand-500: #009688;
+}
