@@ -1,18 +1,14 @@
 import { MouseEvent, useState } from 'react';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 
 import useNavBarConfig from '@/hooks/useNavBarConfig';
-import useAuth from '@/redux/services/auth/useAuth';
 
 import { getChildrenConfig } from './utils';
 import { MainLayoutNavBarProps } from './types';
-import { MainLayoutNavBarInnerStyles, MainLayoutNavBarStyles, NavBarBottomWrap } from './styles';
+import { MainLayoutNavBarInnerStyles, MainLayoutNavBarStyles } from './styles';
 
 const MainLayoutNavBar = ({ isOpen }: MainLayoutNavBarProps) => {
   const [activeItemNavbar, setActiveItemNavbar] = useState<string[]>([]);
   const navbarConfig = useNavBarConfig();
-  const { handleLogout } = useAuth();
 
   const onClickItemHandlerNavBar = (e: MouseEvent<HTMLDivElement>) => {
     const { active, name } = e.currentTarget.dataset;
@@ -44,17 +40,7 @@ const MainLayoutNavBar = ({ isOpen }: MainLayoutNavBarProps) => {
 
   return (
     <MainLayoutNavBarStyles $isOpen={isOpen}>
-      <MainLayoutNavBarInnerStyles>
-        {config}
-        <NavBarBottomWrap>
-          <ListItemButton onClick={handleLogout}>
-            <ListItemIcon>
-              <MoreVertIcon />
-            </ListItemIcon>
-            <ListItemText primary='Выйти из аккаунта' />
-          </ListItemButton>
-        </NavBarBottomWrap>
-      </MainLayoutNavBarInnerStyles>
+      <MainLayoutNavBarInnerStyles>{config}</MainLayoutNavBarInnerStyles>
     </MainLayoutNavBarStyles>
   );
 };

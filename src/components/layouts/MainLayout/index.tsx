@@ -1,58 +1,46 @@
-import { CSSProperties, FC, ReactNode, Suspense, useCallback, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { CSSProperties, FC, ReactNode, Suspense } from 'react';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton } from '@mui/material';
 
 import Loader from '@/components/others/Loader';
 import MainLayoutNavBar from './MainLayoutNavBar';
-import { useAppDispatch } from '@/redux/hooks/useAppDispatch';
+import useToggle from '@/hooks/useToggle';
+import useAuth from '@/redux/services/auth/useAuth';
 
-import { setSidebarStateAction } from '@/redux/services/user/userActions';
-import { selectSidebarState } from '@/redux/services/user/userGetters';
 import { CONTENT_HEADER_ID } from '@/resources/constants';
 import {
   Content,
   ContentTableWrap,
   ContentWrap,
   Header,
-  HeaderLeftWrap,
   HeaderTitle,
   MainLayoutStyles,
 } from './styles';
 
 export type MainLayoutProps = {
   children: ReactNode;
-  styles?: CSSProperties;
 };
 
-const MainLayout: FC<MainLayoutProps> = (props) => {
-  const { children, styles } = props;
-
-  const dispatch = useAppDispatch();
-
-  const sidbarState = useSelector(selectSidebarState);
-  const [isOpenNavBar, setIsOpenNavBar] = useState(sidbarState);
-
-  const onToggleNavBarHandler = useCallback(() => {
-    dispatch(setSidebarStateAction(!isOpenNavBar));
-
-    setIsOpenNavBar((prev) => !prev);
-  }, [dispatch, isOpenNavBar]);
+const MainLayout: FC<MainLayoutProps> = ({ children }) => {
+  const [navbarOpened, toggleNavber] = useToggle(true);
+  const { handleLogout } = useAuth();
 
   return (
     <MainLayoutStyles>
       <Header>
-        <HeaderLeftWrap>
-          <IconButton onClick={onToggleNavBarHandler}>
-            <MenuIcon sx={{ color: '#fff' }} />
-          </IconButton>
-          <HeaderTitle>Superadmin panel</HeaderTitle>
-        </HeaderLeftWrap>
+        <IconButton onClick={toggleNavber}>
+          <MenuIcon sx={{ color: '#fff' }} />
+        </IconButton>
+        <HeaderTitle>Superadmin panel</HeaderTitle>
+        <IconButton onClick={handleLogout}>
+          <ExitToAppIcon sx={{ color: '#fff' }} />
+        </IconButton>
       </Header>
-      <MainLayoutNavBar isOpen={isOpenNavBar} />
+      <MainLayoutNavBar isOpen={navbarOpened} />
       <Content>
         <ContentWrap id={CONTENT_HEADER_ID}>
-          <ContentTableWrap style={styles}>
+          <ContentTableWrap>
             <Suspense fallback={<Loader size={64} isStatic isCenter />}>{children}</Suspense>
           </ContentTableWrap>
         </ContentWrap>

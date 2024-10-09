@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import { brand } from '@/app/App/components/AppThemeProvider/themePrimitives';
+
 export type MainLayoutNavBarStylesProps = {
   $isOpen: boolean;
 };
@@ -9,7 +11,7 @@ export const MainLayoutNavBarStyles = styled.div<MainLayoutNavBarStylesProps>`
   height: 100%;
   transition: 0.3s;
   overflow: hidden;
-  background-color: white;
+  background-color: ${brand[100]};
   box-sizing: border-box;
 
   ${({ $isOpen }) => {
@@ -35,17 +37,14 @@ export const MainLayoutNavBarInnerStyles = styled.div`
   max-height: calc(100vh - 72px);
 `;
 
-export const NavBarBottomWrap = styled.div``;
-
 export type NavBarItemTextStylesProps = {
   $isDisabled?: boolean;
 };
 
 export const NavBarItemText = styled.div<NavBarItemTextStylesProps>`
-  font-family: 'Inter', 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  color: black;
+  color: var(--app-text-black);
 
   ${({ $isDisabled }) => {
     if ($isDisabled) {

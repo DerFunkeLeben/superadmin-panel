@@ -34,13 +34,6 @@ const getChildrenConfig = (
             isActive,
           );
 
-          const expandChildren = (
-            <>
-              {hasChildren && !isActive ? <ExpandLess /> : null}
-              {hasChildren && isActive ? <ExpandMore /> : null}
-            </>
-          );
-
           const itemProps = {
             'data-name': item.label,
             'data-active': isActive,
@@ -53,12 +46,10 @@ const getChildrenConfig = (
                 <ListItemButton {...itemProps}>
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText primary={item.label} />
-                  {expandChildren}
                 </ListItemButton>
               ) : (
                 <ListItem {...linkProps} {...itemProps}>
-                  <NavBarItemText $isDisabled={item.isDisabled}>{item.label}</NavBarItemText>
-                  {expandChildren}
+                  <NavBarItemText $isDisabled={!item.href}>{item.label}</NavBarItemText>
                 </ListItem>
               )}
               {childrenConfig}

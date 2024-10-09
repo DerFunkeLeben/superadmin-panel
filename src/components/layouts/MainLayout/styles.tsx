@@ -19,18 +19,16 @@ export const Header = styled.div`
   height: var(--header-height);
   box-sizing: border-box;
   background: var(--app-brand-500);
+
+  & :last-child {
+    margin-left: auto;
+  }
 `;
 export const HeaderTitle = styled.div`
-  font-family: 'Inter', 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 20px;
   color: #ffffff;
   margin-left: 16px;
-`;
-
-export const HeaderLeftWrap = styled.div`
-  display: flex;
-  align-items: center;
 `;
 
 export const Content = styled.div`

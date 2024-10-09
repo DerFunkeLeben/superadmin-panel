@@ -9,5 +9,4 @@ export interface ChildrenConfig {
   href?: string;
   children?: any[];
   icon?: ReactNode;
-  isDisabled?: boolean;
 }

@@ -1,6 +1,5 @@
 import * as yup from 'yup';
 
-export const STORE_SIDEBAR_STATE = 'STORE_SIDEBAR_STATE';
 export const CONTENT_HEADER_ID = 'CONTENT_HEADER_ID';
 
 export const phoneRegExp =
