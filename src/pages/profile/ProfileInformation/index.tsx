@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Chip, Grid, Stack, Typography } from '@mui/material';
+import { Chip, Grid, Stack } from '@mui/material';
 
 import CardWrapper from '@/components/others/CardWrapper';
 import Loader from '@/components/others/Loader';

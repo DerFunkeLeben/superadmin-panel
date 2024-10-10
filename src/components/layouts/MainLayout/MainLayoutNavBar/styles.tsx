@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { brand } from '@/app/App/components/AppThemeProvider/themePrimitives';
+import { colorScheme } from '@/app/App/components/AppThemeProvider/themePrimitives';
 
 export type MainLayoutNavBarStylesProps = {
   $isOpen: boolean;
@@ -11,8 +11,8 @@ export const MainLayoutNavBarStyles = styled.div<MainLayoutNavBarStylesProps>`
   height: 100%;
   transition: 0.3s;
   overflow: hidden;
-  background-color: ${brand[100]};
   box-sizing: border-box;
+  background: ${colorScheme[900]};
 
   ${({ $isOpen }) => {
     if (!$isOpen) {
@@ -35,6 +35,8 @@ export const MainLayoutNavBarInnerStyles = styled.div`
   overflow: auto;
   height: 100%;
   max-height: calc(100vh - 72px);
+  color: var(--app-text-black);
+  margin: 1rem 0;
 `;
 
 export type NavBarItemTextStylesProps = {
@@ -44,7 +46,6 @@ export type NavBarItemTextStylesProps = {
 export const NavBarItemText = styled.div<NavBarItemTextStylesProps>`
   font-weight: 400;
   font-size: 14px;
-  color: var(--app-text-black);
 
   ${({ $isDisabled }) => {
     if ($isDisabled) {
@@ -55,3 +56,16 @@ export const NavBarItemText = styled.div<NavBarItemTextStylesProps>`
     }
   }}
 `;
+
+export const listItemButtonStyles = {
+  mb: 1,
+  ml: 2,
+  mr: 2,
+  borderRadius: 1,
+  transition: '0.3s',
+  color: 'white',
+
+  '&:hover': {
+    backgroundColor: colorScheme[800],
+  },
+};
