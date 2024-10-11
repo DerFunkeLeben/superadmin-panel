@@ -2,8 +2,8 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
-import App from '@/app/App';
-import AppTheme from './app/App/components/AppThemeProvider';
+import App from './App';
+import AppTheme from './App/AppThemeProvider';
 import AppReduxProvider from './redux/AppReduxProvider';
 
 import '@/styles.css';

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { colorScheme } from '@/app/App/components/AppThemeProvider/themePrimitives';
+import { colorScheme } from '@/App/AppThemeProvider/themePrimitives';
 
 export type MainLayoutNavBarStylesProps = {
   $isOpen: boolean;
