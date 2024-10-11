@@ -6,14 +6,15 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import PersonIcon from '@mui/icons-material/Person';
 import TextIncreaseIcon from '@mui/icons-material/TextIncrease';
 
+import { routes } from '../routes';
 import { Voc } from '@/resources/navbar/constants';
-import { NavBarItems } from './types';
+import { NavBarItems } from '../types';
 
 const navBar: NavBarItems = [
   {
     label: Voc.USERS,
     icon: <PersonIcon />,
-    href: '',
+    href: routes.users.list,
   },
   {
     label: Voc.ROLES,

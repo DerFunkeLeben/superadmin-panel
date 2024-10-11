@@ -8,7 +8,7 @@ import { useFilterSearch } from '@/hooks/useFilterSearch';
 
 import { BC } from '@/resources/breadcrumbs';
 import { Voc } from '@/resources/navbar/constants';
-import { routesCities } from '@/resources/routes/cities';
+import { routesCities } from '@/resources/routes/users';
 
 const CityListPage: FC = () => {
   const { filterSearch, handleFilterSearch } = useFilterSearch();

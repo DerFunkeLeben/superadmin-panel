@@ -1,6 +1,6 @@
 import { GridColDef } from '@mui/x-data-grid';
 
-import { ApiResponseWithPagination } from '@/redux/types';
+import { ApiResponseWithPagination } from '@/types/api/common';
 import { IListTableProps } from '@/types/table.types';
 
 type ListData = ApiResponseWithPagination<any>;

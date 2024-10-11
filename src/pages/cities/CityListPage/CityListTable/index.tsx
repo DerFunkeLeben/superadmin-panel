@@ -7,7 +7,7 @@ import { useTableColumnConfig } from '@/hooks/table/useTableColumnConfig';
 import { useTableDeleteHandler } from '@/hooks/table/useTableDeleteHandler';
 
 import { columnsConfig } from './tableConfig';
-import { routesCities } from '@/resources/routes/cities';
+import { routesCities } from '@/resources/routes/users';
 import { IFilterSearch } from '@/types';
 
 export type CityListProps = {

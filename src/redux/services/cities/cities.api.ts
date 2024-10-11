@@ -15,7 +15,7 @@ import {
   CityListRequest,
   CityListResponse,
   CityUpdateRequest,
-} from '@/types/api/cities';
+} from '@/types/api/users';
 
 const citiesApi = api.injectEndpoints({
   endpoints: (builder) => {

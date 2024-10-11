@@ -1,4 +1,5 @@
 import { styled } from '@mui/material/styles';
+import { DataGrid } from '@mui/x-data-grid';
 
 export const StyledGridOverlay = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -17,5 +18,18 @@ export const StyledGridOverlay = styled('div')(({ theme }) => ({
     ...theme.applyStyles('light', {
       fill: '#E8EAED',
     }),
+  },
+}));
+
+export const StyledDataGrid = styled(DataGrid)(({ theme }) => ({
+  borderColor: theme.palette.info.light,
+  '--DataGrid-rowBorderColor': theme.palette.info.light,
+
+  '& .MuiDataGrid-cell': {
+    borderColor: theme.palette.info.light,
+  },
+
+  '& .MuiDataGrid-footerContainer': {
+    borderColor: theme.palette.info.light,
   },
 }));

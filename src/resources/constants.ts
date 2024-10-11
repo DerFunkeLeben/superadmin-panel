@@ -13,16 +13,3 @@ export const FormRuler = {
   ),
   email: yup.string().nullable().email('Указан неверный E-mail'),
 };
-
-export enum Client {
-  DANONE = 'danone',
-  SERVIER = 'servier',
-  LOREAL = 'loreal',
-  GALDERMA = 'galderma',
-  VEKTORPHARM = 'vektorpharm',
-  NIKAMED = 'nikamed',
-  OTCPHARM = 'otcpharm',
-  INFAPRIM = 'infaprim',
-}
-
-export const knownClients = Object.values(Client);

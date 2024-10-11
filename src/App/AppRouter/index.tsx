@@ -5,7 +5,7 @@ import MainLayout from '@/components/layouts/MainLayout';
 import useRoutesConfig from '@/hooks/useRoutesConfig';
 import useAuth from '@/redux/services/auth/useAuth';
 
-import { routes } from '@/resources/routes/common';
+import { routes } from '@/resources/routes';
 
 const disabledPages = [routes.authorization];
 

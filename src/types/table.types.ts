@@ -1,9 +1,4 @@
-import {
-  GridFilterModel,
-  GridPaginationModel,
-  GridRowSelectionModel,
-  GridSortModel,
-} from '@mui/x-data-grid';
+import { GridPaginationModel, GridRowSelectionModel, GridSortModel } from '@mui/x-data-grid';
 
 type Condition<T> = (tableItemData: T) => boolean;
 
@@ -36,5 +31,4 @@ export interface IListTableProps {
   onRowSelectionModelChange: (selectionModel: GridRowSelectionModel) => void;
   onPaginationModelChange: (paginationModel: GridPaginationModel) => void;
   onSortModelChange: (sortModel: GridSortModel) => void;
-  onFilterModelChange: (filterModel: GridFilterModel) => void;
 }

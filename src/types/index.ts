@@ -13,12 +13,6 @@ export interface ErrorType {
   };
 }
 
-export enum EntityType {
-  doctor = 'doctor',
-  pharmacy = 'pharmacy',
-  med_institution = 'med_institution',
-}
-
 export interface IFilterSearch {
   name?: string;
   title?: string;

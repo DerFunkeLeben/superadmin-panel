@@ -1,29 +1,29 @@
-export type WrapSuccessResponse<T> = {
-  data: T;
-};
-
 export type PageMetaDto = {
-  page: number;
+  total: number;
   limit: number;
-  itemCount: number;
-  pageCount: number;
-  hasPreviousPage: boolean;
-  hasNextPage: boolean;
-  showAll: boolean;
+  offset: number;
 };
 
-export type MetricEntity = {
-  id: number;
-  data: { [x: string]: {} | undefined };
-  createdAt: string;
-  updatedAt: string;
-};
-
-export type QueryParams<T> = {
-  name?: string;
-  orderBy?: T;
-  sortBy?: T;
-  sortAt?: 'ASC' | 'DESC';
-  page?: number;
+export type QueryParams = {
   limit?: number;
+  offset?: number;
+  sort?: string;
 };
+
+export type Entity = { id: string } & Record<string, any>;
+
+export interface ApiResponseWithPagination<T extends Entity> {
+  items: T[];
+  meta: PageMetaDto;
+}
+
+export type ApiUpdateDto<E extends Entity> = Partial<Omit<E, 'id'>>;
+
+export interface ApiUpdateRequest<T> {
+  id: string;
+  patch: T;
+}
+
+export interface ApiIdRequest {
+  id: string;
+}

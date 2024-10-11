@@ -1,17 +1,15 @@
 import { useState } from 'react';
 import { GridRowSelectionModel } from '@mui/x-data-grid';
 
-import { useFilter } from '@/hooks/table/useFilter';
 import { usePagination } from '@/hooks/table/usePagination';
 import { useSortTable } from '@/hooks/table/useSortTable';
 
 import { IListTableProps } from '@/types/table.types';
 
-export const useListTable = (sortMode = 'SORTBY') => {
+export const useListTable = () => {
   const [checkedRows, setCheckedRows] = useState<GridRowSelectionModel>();
   const { paginationQuery, paginationModel, onPaginationModelChange } = usePagination();
-  const { filterState, onChangeFilter } = useFilter();
-  const { stringSortTable, onChangeSortTable } = useSortTable(sortMode);
+  const { stringSortTable, onChangeSortTable } = useSortTable();
 
   const onRowSelectionModelChange = (selectionModel: GridRowSelectionModel) => {
     if (selectionModel) setCheckedRows(selectionModel);
@@ -19,7 +17,6 @@ export const useListTable = (sortMode = 'SORTBY') => {
 
   const listQueryParams = {
     ...paginationQuery,
-    ...filterState,
     ...stringSortTable,
   };
 
@@ -28,7 +25,6 @@ export const useListTable = (sortMode = 'SORTBY') => {
     onPaginationModelChange,
     onRowSelectionModelChange,
     onSortModelChange: onChangeSortTable,
-    onFilterModelChange: onChangeFilter,
   };
 
   return { checkedRows, listTableProps, listQueryParams };

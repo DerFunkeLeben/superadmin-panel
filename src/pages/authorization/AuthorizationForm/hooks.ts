@@ -7,7 +7,7 @@ import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query';
 import useAuth from '@/redux/services/auth/useAuth';
 
 import { formSchema } from './formSchema';
-import { routes } from '@/resources/routes/common';
+import { routes } from '@/resources/routes';
 import { AuthorizationFormValues } from './types';
 
 export const useAuthorizationForm = () => {

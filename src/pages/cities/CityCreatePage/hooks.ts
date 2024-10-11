@@ -7,7 +7,7 @@ import { useCreateCityMutation } from '@/redux/services/cities/cities.api';
 import { useNotification } from '@/hooks/useNotification';
 
 import { formSchema } from '../CityForm/formSchema';
-import { routesCities } from '@/resources/routes/cities';
+import { routesCities } from '@/resources/routes/users';
 import { CITY_FORM } from '../CityForm/constants';
 import { CityFormValues } from '../CityForm/types';
 

@@ -1,11 +1,11 @@
 import { FC } from 'react';
-import { DataGrid } from '@mui/x-data-grid';
 
 import CustomNoRowsOverlay from './NoRowsOverlay';
 import useTableLoading from '@/hooks/table/useTableLoading';
 
 import { OPTIONS_PAGE_SIZE_CONST } from '@/pages/constants';
 import { IListTable } from './types';
+import { StyledDataGrid } from './styles';
 
 const ListTable: FC<IListTable> = ({
   data,
@@ -17,18 +17,18 @@ const ListTable: FC<IListTable> = ({
   const isLoading = useTableLoading();
 
   return (
-    <DataGrid
+    <StyledDataGrid
       {...listTableProps}
-      rows={data?.list ?? []}
+      rows={data?.items ?? []}
       columns={columns}
       pagination
+      disableColumnMenu
       checkboxSelection={checkboxSelection}
       loading={isLoading}
-      filterMode={'server'}
       sortingMode={'server'}
       paginationMode={'server'}
       pageSizeOptions={OPTIONS_PAGE_SIZE_CONST}
-      rowCount={data?.meta.itemCount || 0}
+      rowCount={data?.meta?.total || 0}
       rowHeight={rowHeight}
       keepNonExistentRowsSelected
       slots={{

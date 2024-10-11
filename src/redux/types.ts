@@ -1,21 +1,19 @@
 import { Action, ThunkAction } from '@reduxjs/toolkit';
+import {
+  BaseQueryFn,
+  EndpointBuilder,
+  FetchArgs,
+  FetchBaseQueryError,
+} from '@reduxjs/toolkit/dist/query/react';
 
 import { store } from '@/redux/storeInstance';
-import { PageMetaDto } from '@/types/api/common';
+import { Tags } from '@/redux/constants';
+import { ApiIdRequest } from '@/types/api/common';
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type AppRootState = ReturnType<typeof store.getState>;
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch;
-
-export type ApiResponse<T> = T;
-
-export interface ApiResponseWithPagination<T> {
-  list: T[];
-  meta: ApiPagination;
-}
-
-export type ApiPagination = PageMetaDto;
 
 export type AppThunk<ReturnType = void> = ThunkAction<
   ReturnType,
@@ -24,6 +22,10 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   Action<string>
 >;
 
-export type Entity = { id: string | number };
-export type ApiResponseWithEntitiesWithId = ApiResponseWithPagination<Entity>;
-export type AnyEntity = Entity & Record<string, any>;
+export type AppEndpointBuilder = EndpointBuilder<
+  BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError>,
+  Tags,
+  'api'
+>;
+
+export type UrlWithId = (arg: ApiIdRequest) => string;

@@ -4,7 +4,7 @@ import { useInputValue } from '@/hooks/useInputValue';
 
 import { DEFAULT_SEARCH_LIMIT } from '../constants';
 import { AppCitySelectProps } from './types';
-import { CityRecord } from '@/types/api/cities';
+import { CityRecord } from '@/types/api/users';
 
 const AppCitySelect = <Multiple extends boolean>(props: AppCitySelectProps<Multiple>) => {
   const { style, ...restProps } = props;

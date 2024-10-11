@@ -11,7 +11,7 @@ import useToggle from '@/hooks/useToggle';
 import useAuth from '@/redux/services/auth/useAuth';
 
 import { CONTENT_HEADER_ID } from '@/resources/constants';
-import { routes } from '@/resources/routes/common';
+import { routes } from '@/resources/routes';
 import {
   Content,
   ContentTableWrap,
@@ -42,10 +42,10 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
           <MenuIcon sx={white} />
         </IconButton>
         <HeaderTitle>Superadmin panel</HeaderTitle>
-        <IconButton onClick={handleLogout}>
+        <IconButton onClick={toProfile}>
           <PersonIcon sx={white} />
         </IconButton>
-        <IconButton onClick={toProfile}>
+        <IconButton onClick={handleLogout}>
           <ExitToAppIcon sx={white} />
         </IconButton>
       </Header>

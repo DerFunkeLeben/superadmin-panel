@@ -1,17 +1,9 @@
 import { RouteObject } from 'react-router-dom';
 
-import { pagesCities } from '@/resources/routes/cities';
-import { pagesCommon } from '@/resources/routes/common';
-
-const commonRoutes = [
-  pagesCommon.root,
-  pagesCommon.authorization,
-  pagesCommon.profile,
-  pagesCities,
-];
+import { pages } from '@/resources/routes';
 
 const useRoutesConfig = (): RouteObject[] => {
-  return commonRoutes;
+  return pages;
 };
 
 export default useRoutesConfig;

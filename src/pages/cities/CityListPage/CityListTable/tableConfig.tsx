@@ -3,7 +3,7 @@ import { GridColDef } from '@mui/x-data-grid';
 import { ID_CELL } from '@/components/others/TableCells/IdCell';
 
 import { CityKey } from '../../CityForm/constants';
-import { CityRecord } from '@/types/api/cities';
+import { CityRecord } from '@/types/api/users';
 
 export const columnsConfig: GridColDef<CityRecord>[] = [
   ID_CELL,

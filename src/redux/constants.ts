@@ -1,1 +1,3 @@
-export enum Tags {}
+export enum Tags {
+  USERS = 'User',
+}
