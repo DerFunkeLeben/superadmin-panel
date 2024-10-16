@@ -21,7 +21,7 @@ const Buttons: FC<ButtonsProps> = ({ buttonsConfig }) => {
           textForButton = 'Добавить',
           size = 'small',
           variant = 'contained',
-          color = 'success',
+          color = 'primary',
           loading = false,
           link,
           onClick,

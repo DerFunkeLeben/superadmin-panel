@@ -69,6 +69,7 @@ export class EndpointGenerator {
   }
 
   byId<ByIdRequest extends ApiIdRequest, ByIdResponse extends Entity>(URL: UrlWithId) {
+    console.log('gge');
     return this.builder.query<ByIdResponse, ByIdRequest>({
       query: (arg) => ({
         url: URL(arg),

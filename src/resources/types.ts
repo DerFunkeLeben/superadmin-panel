@@ -1,6 +1,10 @@
 import { ReactNode } from 'react';
 
-export type TComponentsConfig = Record<'list' | 'create' | 'edit', ReactNode>;
+export type TComponentsConfig = {
+  list: ReactNode;
+  edit: ReactNode;
+  create?: ReactNode;
+};
 
 export type NavBarItem = {
   label: string;

@@ -1,7 +1,6 @@
 import { lazy } from 'react';
 
-const UsersCreatePage = lazy(() => import('@/pages/users/CityCreatePage'));
-const UsersEditPage = lazy(() => import('@/pages/users/CityEditPage'));
+const UsersEditPage = lazy(() => import('@/pages/users/UsersEditPage'));
 const UsersListPage = lazy(() => import('@/pages/users/UsersListPage'));
 
 import { pagesCommon, routesCommon } from './common';
@@ -9,7 +8,6 @@ import { generateRoutesPages } from './utils';
 
 const { routes: routesUsers, pages: pagesUsers } = generateRoutesPages('/users', {
   list: <UsersListPage />,
-  create: <UsersCreatePage />,
   edit: <UsersEditPage />,
 });
 

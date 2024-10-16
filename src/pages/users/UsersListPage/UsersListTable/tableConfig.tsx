@@ -16,10 +16,12 @@ export const columnsConfig: GridColDef<UserEntity>[] = [
     field: 'login',
     headerName: 'Логин',
     sortable: true,
+    minWidth: 200,
   },
   {
     field: 'email',
     headerName: 'Email',
     sortable: true,
+    minWidth: 300,
   },
 ];

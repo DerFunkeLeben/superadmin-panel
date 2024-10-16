@@ -6,8 +6,9 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useNotification } from '@/hooks/useNotification';
 
 import { clearObject, getOnlyDirtyValues, OptionsFlags } from '@/utils/getOnlyDirtyValues';
+import { defaultFormFormatter } from '@/resources/constants';
 import { EditFormProps } from './types';
-import { Entity } from '@/redux/types';
+import { Entity } from '@/types/api/common';
 
 export const useEditForm = <
   TEntity extends Entity,
@@ -19,7 +20,7 @@ export const useEditForm = <
   const {
     initialEntity,
     formSchema,
-    formatter,
+    formatter = defaultFormFormatter,
     routeOnSuccess,
     alertSuccess,
     alertError,

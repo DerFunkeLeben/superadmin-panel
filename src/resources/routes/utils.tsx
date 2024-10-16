@@ -3,10 +3,9 @@ import { Navigate, RouteObject } from 'react-router-dom';
 import { TComponentsConfig } from '../types';
 
 export const generateRoutesPages = (rootUrl: string, Components: TComponentsConfig) => {
-  const routes = {
+  const routes: Record<string, any> = {
     root: rootUrl,
     list: `${rootUrl}/list`,
-    create: `${rootUrl}/create`,
     edit: (id: string) => `${rootUrl}/edit/${id}`,
   };
 
@@ -21,16 +20,22 @@ export const generateRoutesPages = (rootUrl: string, Components: TComponentsConf
         path: 'list',
         element: Components.list,
       },
-      {
-        path: 'create',
-        element: Components.create,
-      },
+
       {
         path: `edit/:id`,
         element: Components.edit,
       },
     ],
   };
+
+  if (Components.create) {
+    routes.create = `${rootUrl}/create`;
+
+    pages.children?.push({
+      path: 'create',
+      element: Components.create,
+    });
+  }
 
   return { routes, pages };
 };

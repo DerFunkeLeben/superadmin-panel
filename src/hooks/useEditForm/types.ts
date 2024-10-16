@@ -1,8 +1,8 @@
 import { MutationDefinition } from '@reduxjs/toolkit/query';
 import { UseMutation } from '@reduxjs/toolkit/src/query/react/buildHooks';
 
-import { Entity } from '@/redux/types';
 import { TFormatter } from '@/types';
+import { Entity } from '@/types/api/common';
 
 export interface EditFormProps<TEntity extends Entity, TFormValues, TUpdateDto> {
   initialEntity: TEntity;
@@ -11,7 +11,7 @@ export interface EditFormProps<TEntity extends Entity, TFormValues, TUpdateDto> 
     MutationDefinition<{ id: TEntity['id']; patch: TUpdateDto }, any, any, void, 'api'>
   >;
 
-  formatter: TFormatter<TEntity, TFormValues, TUpdateDto>;
+  formatter?: TFormatter<TEntity, TFormValues, TUpdateDto>;
   routeOnSuccess: string;
   alertSuccess: string;
   alertError: string;

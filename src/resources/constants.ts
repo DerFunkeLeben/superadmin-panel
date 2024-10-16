@@ -13,3 +13,8 @@ export const FormRuler = {
   ),
   email: yup.string().nullable().email('Указан неверный E-mail'),
 };
+
+export const defaultFormFormatter = {
+  to: (data: any) => data,
+  from: (data: any) => data,
+};
