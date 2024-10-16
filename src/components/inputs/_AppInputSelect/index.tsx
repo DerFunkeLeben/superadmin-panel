@@ -5,9 +5,9 @@ import TextField from '@mui/material/TextField';
 
 import { getOptionLabelDefault, isOptionEqualToValueDefault } from './utils';
 import { AppInputSelectProps, TInputSelectValue } from './types';
-import { AnyEntity } from '@/redux/types';
+import { Entity } from '@/types/api/common';
 
-const AppInputSelect = <T extends AnyEntity | string, M extends boolean>(
+const AppInputSelect = <T extends Entity | string, M extends boolean>(
   props: AppInputSelectProps<T, M>,
 ) => {
   const {

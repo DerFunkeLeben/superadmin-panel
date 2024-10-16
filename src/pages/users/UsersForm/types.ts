@@ -1,8 +1,4 @@
-export enum UserKey {
-  login = 'login',
-  email = 'email',
-  name = 'name',
-}
+import { UserKey } from '@/types/api/users';
 
 export type UsersFormValues = {
   [UserKey.name]: string;

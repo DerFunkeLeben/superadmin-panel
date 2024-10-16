@@ -5,8 +5,9 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import { useNotification } from '@/hooks/useNotification';
 
+import { defaultFormFormatter } from '@/resources/constants';
 import { CreateFormProps } from './types';
-import { Entity } from '@/redux/types';
+import { Entity } from '@/types/api/common';
 
 export const useCreateForm = <TEntity extends Entity, TFormValues extends FieldValues, TCreateDto>(
   props: CreateFormProps<TEntity, TFormValues, TCreateDto>,
@@ -14,7 +15,7 @@ export const useCreateForm = <TEntity extends Entity, TFormValues extends FieldV
   const {
     initData = {} as DefaultValues<TFormValues>,
     formSchema,
-    formatter,
+    formatter = defaultFormFormatter,
     routeOnSuccess,
     alertSuccess,
     alertError,

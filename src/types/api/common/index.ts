@@ -17,6 +17,7 @@ export interface ApiResponseWithPagination<T extends Entity> {
   meta: PageMetaDto;
 }
 
+export type ApiCreateDto<E extends Entity> = Omit<E, 'id'>;
 export type ApiUpdateDto<E extends Entity> = Partial<Omit<E, 'id'>>;
 
 export interface ApiUpdateRequest<T> {

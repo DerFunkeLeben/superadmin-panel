@@ -19,6 +19,7 @@ const navBar: NavBarItems = [
   {
     label: Voc.ROLES,
     icon: <AccessibilityNewIcon />,
+    href: routes.roles.list,
   },
   {
     label: Voc.GROUPS,

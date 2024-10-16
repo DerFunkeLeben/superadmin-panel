@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { Chip } from '@mui/material';
 
-import { AnyEntity } from '@/redux/types';
+import { Entity } from '@/types/api/common';
 
 interface ChipCellsProps {
-  valueArr: AnyEntity[] | undefined;
+  valueArr: Entity[] | undefined;
   labelKey?: string;
 }
 

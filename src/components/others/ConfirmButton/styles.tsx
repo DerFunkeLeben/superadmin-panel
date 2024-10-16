@@ -1,5 +1,5 @@
 import { Typography } from '@mui/material';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const AppContainer = styled.div`
   display: flex;
@@ -14,12 +14,7 @@ export const AppGroupButton = styled.div`
 `;
 
 export const AppDescription = styled(Typography).attrs({ variant: 'caption' })`
-  margin-bottom: 16px;
-  ${() => {
-    return css`
-      color: ${(props) => props.theme.palette.other.appTextLightBlack};
-    `;
-  }}
+  margin-bottom: 16px !important;
 `;
 
 export const AppTypography = styled(Typography)`
@@ -28,9 +23,4 @@ export const AppTypography = styled(Typography)`
   font-weight: 500;
   align-items: center;
   gap: 8px;
-  ${() => {
-    return css`
-      color: ${(props) => props.theme.palette.other.appTextBlack};
-    `;
-  }}
 `;

@@ -1,9 +1,7 @@
 import { ReactNode } from 'react';
 import { ButtonProps } from '@mui/material';
 
-import { BreadCrumb } from '@/resources/breadcrumbs/types';
-
-export type ContentHeaderBreadcrumbsProps = BreadCrumb;
+export type ContentHeaderBreadcrumbsProps = { name: string; url?: string };
 
 export interface ContentHeaderButtonConfig extends ButtonProps {
   textForButton?: string;

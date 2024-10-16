@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-import { UserKey } from './types';
+import { UserKey } from '@/types/api/users';
 
 export const formSchema = yup
   .object({

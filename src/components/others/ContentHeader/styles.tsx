@@ -31,14 +31,9 @@ export const ContentHeaderTitle = styled.div`
 
 export const BreadcrumbsLink = styled(Link)<BreadcrumbsLinkProps>`
   ${({ colortext }) => {
-    if (colortext) {
-      return css`
-        color: ${(props) => props.theme.palette.other.appTextBlack} !important;
-      `;
-    } else {
+    if (!colortext) {
       return css`
         cursor: pointer;
-        color: ${(props) => props.theme.palette.other.appTextLightBlack} !important;
       `;
     }
   }}

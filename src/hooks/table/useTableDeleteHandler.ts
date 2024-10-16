@@ -18,7 +18,7 @@ export function useTableDeleteHandler<TableItemData extends GridValidRowModel>(
 
       const handleDelete = async (id: GridRowId) => {
         try {
-          const response = await deleteM(id);
+          const response = await deleteM({ id });
           if ('error' in response) return throwError();
         } catch (e) {
           console.log('catch');

@@ -6,11 +6,17 @@ import {
   QueryParams,
 } from '@/types/api/common';
 
+export enum UserKey {
+  name = 'name',
+  login = 'login',
+  email = 'email',
+}
+
 export type UserEntity = {
   id: string;
-  login: string;
-  email: string;
-  name: string;
+  [UserKey.login]: string;
+  [UserKey.email]: string;
+  [UserKey.name]: string;
 };
 
 export type UserListRequest = QueryParams;

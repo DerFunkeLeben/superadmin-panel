@@ -1,5 +1,8 @@
 import { lazy } from 'react';
 
+const RolesCreatePage = lazy(() => import('@/pages/roles/RolesCreatePage'));
+const RolesEditPage = lazy(() => import('@/pages/roles/RolesEditPage'));
+const RolesListPage = lazy(() => import('@/pages/roles/RolesListPage'));
 const UsersEditPage = lazy(() => import('@/pages/users/UsersEditPage'));
 const UsersListPage = lazy(() => import('@/pages/users/UsersListPage'));
 
@@ -11,8 +14,18 @@ const { routes: routesUsers, pages: pagesUsers } = generateRoutesPages('/users',
   edit: <UsersEditPage />,
 });
 
-const routes = { ...routesCommon, users: routesUsers };
+const { routes: routesRoles, pages: pagesRoles } = generateRoutesPages('/roles', {
+  list: <RolesListPage />,
+  edit: <RolesEditPage />,
+  create: <RolesCreatePage />,
+});
 
-const pages = [...Object.values(pagesCommon), pagesUsers];
+const routes = {
+  ...routesCommon,
+  users: routesUsers,
+  roles: routesRoles,
+};
+
+const pages = [...Object.values(pagesCommon), pagesUsers, pagesRoles];
 
 export { routes, pages };
