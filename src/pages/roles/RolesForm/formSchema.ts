@@ -6,6 +6,6 @@ export const formSchema = yup
   .object({
     [RoleKey.name]: yup.string().required('Укажите название'),
     [RoleKey.description]: yup.string().required('Укажите описание'),
-    [RoleKey.code]: yup.string(),
+    [RoleKey.code]: yup.string().required('Укажите код'),
   })
   .required();

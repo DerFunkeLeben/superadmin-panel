@@ -4,23 +4,23 @@ import Grid from '@mui/material/Grid';
 import FormTextInput from '@/components/form/FormTextInput';
 import CardWrapper from '@/components/others/CardWrapper';
 
-import { RoleKey } from '@/types/api/roles';
+import { GroupKey } from '@/types/api/groups';
 
-const RoleFields: FC = () => {
+const GroupFields: FC = () => {
   return (
     <CardWrapper>
       <Grid container>
         <Grid item xs={12}>
-          <FormTextInput name={RoleKey.name} label='Название' />
+          <FormTextInput name={GroupKey.name} label='Название' />
         </Grid>
         <Grid item xs={12}>
-          <FormTextInput name={RoleKey.code} label='Код' />
+          <FormTextInput name={GroupKey.code} label='Код' />
         </Grid>
         <Grid item xs={12}>
-          <FormTextInput name={RoleKey.description} label='Описание' />
+          <FormTextInput name={GroupKey.description} label='Описание' />
         </Grid>
       </Grid>
     </CardWrapper>
   );
 };
-export default RoleFields;
+export default GroupFields;

@@ -24,6 +24,7 @@ const navBar: NavBarItems = [
   {
     label: Voc.GROUPS,
     icon: <GroupsIcon />,
+    href: routes.groups.list,
   },
   {
     label: Voc.FEATURE_FLAGS,
